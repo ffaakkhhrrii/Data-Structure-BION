@@ -30,6 +30,7 @@ public class Member extends User {
     // Method untuk mencari lagu berdasarkan judul
     public boolean cariLagu(String judul) {
         for (Lagu lagu : playlist) {
+            // NOTE : pencarian harus mengetik full nama lagu tanpa mengkhawatirkan kapital
             if (lagu.getJudul().equalsIgnoreCase(judul)) {
                 System.out.println("\n=== LAGU DITEMUKAN ===");
                 lagu.tampilkanInfo();

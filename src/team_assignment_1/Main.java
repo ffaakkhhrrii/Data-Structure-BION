@@ -130,6 +130,7 @@ public class Main {
                     
                 case 2:
                     // Mencari lagu berdasarkan judul
+                    // NOTE : pencarian harus mengetik full nama lagu tanpa mengkhawatirkan kapital
                     System.out.print("Masukkan judul lagu yang dicari: ");
                     String judulCari = scanner.nextLine();
                     member.cariLagu(judulCari);
