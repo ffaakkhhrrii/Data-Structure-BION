@@ -5,11 +5,15 @@ public abstract class User {
     // Atribut User (Enkapsulasi)
     private String username;
     private String email;
+    private String password;
+    private String role;
     
     // Constructor
-    public User(String username, String email) {
+    public User(String username, String email, String password, String role) {
         this.username = username;
         this.email = email;
+        this.password = password;
+        this.role = role;
     }
     
     // Getter untuk username

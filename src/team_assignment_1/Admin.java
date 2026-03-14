@@ -8,8 +8,8 @@ public class Admin extends User {
     private ArrayList<Lagu> playlist;  // Reference ke ArrayList playlist
     
     // Constructor
-    public Admin(String username, String email, ArrayList<Lagu> playlist) {
-        super(username, email);
+    public Admin(String username, String email, String password, String role, ArrayList<Lagu> playlist) {
+        super(username, email, password, role);
         this.playlist = playlist;
     }
     

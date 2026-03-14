@@ -8,13 +8,13 @@ public class Member extends User {
     private ArrayList<Lagu> playlist; // Reference ke ArrayList playlist dari Main
     
     // Constructor
-    public Member(String username, String email, ArrayList<Lagu> playlist) {
-        super(username, email);
+    public Member(String username, String email, String role, String password, ArrayList<Lagu> playlist) {
+        super(username, email, role, password);
         this.playlist = playlist;
     }
-    
-    // Method untuk menampilkan daftar lagu
-    public void lihatDaftarLagu() {
+
+    // Method untuk menampilkan lagu
+    public void tampilkanSemuaLagu() {
         if (playlist.isEmpty()) {
             System.out.println("Playlist kosong!");
             return;
