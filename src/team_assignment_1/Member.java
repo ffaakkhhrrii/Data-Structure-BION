@@ -14,8 +14,8 @@ public class Member extends User {
     private ArrayList<Lagu> playlist; // Reference ke ArrayList playlist dari Main
     
     // Constructor
-    public Member(String username, String email, String role, String password, ArrayList<Lagu> playlist) {
-        super(username, email, role, password);
+    public Member(String username, String email, String password, String role, ArrayList<Lagu> playlist) {
+        super(username, email, password, role);
         this.playlist = playlist;
     }
 

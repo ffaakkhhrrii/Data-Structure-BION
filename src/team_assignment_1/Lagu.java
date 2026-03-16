@@ -20,10 +20,26 @@ class Lagu {
         setDurasi(durasi); // Setter untuk validasi durasi
     }
 
-    // Getter untuk atribut Lagu
-    public String getJudul() { return judul; }
-    public String getPenyanyi() { return artis; }
-    public double getDurasi() { return durasi; }
+    // Getter dan setter untuk atribut Lagu
+    public String getJudul() {
+        return judul;
+    }
+
+    public void setJudul(String judul) {
+        this.judul = judul;
+    }
+
+    public String getArtis() {
+        return artis;
+    }
+
+    public void setArtis(String artis) {
+        this.artis = artis;
+    }
+
+    public double getDurasi() {
+        return durasi;
+    }
 
     // Setter untuk durasi dengan validasi
     public void setDurasi(double durasi) {

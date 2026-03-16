@@ -16,6 +16,7 @@ public class Main {
 
         // Membuat daftar lagu menggunakan ArrayList
         ArrayList<Lagu> daftarLagu = new ArrayList<>();
+        // ArrayList digunakan sebagai implementasi dinamis dari array
         
         // Inisialisasi daftar lagu
         daftarLagu.add(new Lagu("Shape of You", "Ed Sheeran", 4.24));
@@ -24,7 +25,7 @@ public class Main {
 
         // Membuat instance Admin dan Member
         Admin admin = new Admin("admin1", "admin@gmail.com", "1234", "admin", daftarLagu);
-        Member member = new Member("member1", "member@gmail.com", "member", "1234", daftarLagu);
+        Member member = new Member("member1", "member@gmail.com", "1234", "member", daftarLagu);
 
         // Menu utama
         boolean running = true;
