@@ -1,3 +1,9 @@
+/**
+ * FAKHRI ZAIN (2902701823)
+ * RAIHAN ZAKY NOORDIANTORO (2902693802)
+ * CAREN WONG (2902693222)
+ * KEVIN LIONEL ANDRIANTO (2902700386)
+ */
 package team_assignment_1;
 
 import java.util.ArrayList;
