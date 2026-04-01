@@ -41,7 +41,7 @@ public class Main {
                     System.out.print("Masukkan nama artis: ");
                     String artis = scanner.nextLine();
 
-                    System.out.print("Masukkan durasi lagu (dalam menit): ");
+                    System.out.print("Masukkan durasi lagu (dalam menit, contoh : 3 atau 3,4): ");
                     double durasi = scanner.nextDouble();
                     scanner.nextLine();
 
