@@ -24,8 +24,9 @@ public class Main {
             System.out.println("3. Hapus Lagu Berdasarkan Judul");
             System.out.println("4. Cari Lagu Berdasarkan Judul");
             System.out.println("5. Urutkan Lagu Berdasarkan Durasi");
-            System.out.println("6. Keluar");
-            System.out.print("Pilih (1-6): ");
+            System.out.println("6. Urutkan Lagu Berdasarkan Durasi (Selection Sort)");
+            System.out.println("7. Keluar");
+            System.out.print("Pilih (1-7): ");
 
             int pilihan = scanner.nextInt();
             scanner.nextLine(); // Membersihkan newline
@@ -65,6 +66,9 @@ public class Main {
                     playlistArray.urutkanLaguBerdasarkanDurasi();
                     break;
                 case 6:
+                    playlistArray.urutkanLaguBerdasarkanDurasiSelection();
+                    break;
+                case 7:
                     running = false;
                     System.out.println("Terima kasih telah menggunakan aplikasi playlist musik!");
                     break;

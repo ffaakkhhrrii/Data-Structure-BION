@@ -1,3 +1,10 @@
+/**
+ * FAKHRI ZAIN (2902701823)
+ * RAIHAN ZAKY NOORDIANTORO (2902693802)
+ * CAREN WONG (2902693222)
+ * KEVIN LIONEL ANDRIANTO (2902700386)
+ */
+
 package team_assignment_2;
 
 public class PlaylistArray {
@@ -62,21 +69,21 @@ public class PlaylistArray {
         }
     }
 
-    void cariLagu(String judulLagu) {
+    void cariLagu(String judulLagu) { // Searching
         for (Lagu lagu : playlist) {
-            if (lagu != null && lagu.getJudul().equalsIgnoreCase(judulLagu)) {
+            if (lagu != null && lagu.getJudul().equalsIgnoreCase(judulLagu)) { // Linear Search (Jika lagu dengan judul yang dicari ditemukan)
                 System.out.println("\nLagu ditemukan: ");
-                lagu.tampilkanInfo();
+                lagu.tampilkanInfo(); // Menampilkan informasi lagu yang ditemukan
                 return;
             }
         }
-        System.out.println("Lagu dengan judul '" + judulLagu + "' tidak ditemukan dalam playlist.");
+        System.out.println("Lagu dengan judul '" + judulLagu + "' tidak ditemukan dalam playlist."); // Jika lagu dengan judul yang dicari tidak ditemukan
     }
 
-    void urutkanLaguBerdasarkanDurasi(){
+    void urutkanLaguBerdasarkanDurasi(){ // Sorting (Bubble Sort)
         for (int i = 0; i < playlist.length - 1; i++) {
             for (int j = 0; j < playlist.length - i - 1; j++) {
-                if (playlist[j] != null && playlist[j + 1] != null && playlist[j].getDurasi() > playlist[j + 1].getDurasi()) {
+                if (playlist[j] != null && playlist[j + 1] != null && playlist[j].getDurasi() > playlist[j + 1].getDurasi()) { // Membandingkan durasi lagu saat ini dengan durasi lagu berikutnya
                     // Menukar posisi lagu jika durasi lagu saat ini lebih besar dari durasi lagu berikutnya
                     Lagu temp = playlist[j];
                     playlist[j] = playlist[j + 1];
@@ -88,5 +95,23 @@ public class PlaylistArray {
         tampilkanSemuaLagu();
     }
 
+    void urutkanLaguBerdasarkanDurasiSelection() { // Sorting (Selection Sort)
+        int n = playlist.length;
+        for (int i = 0; i < n - 1; i++) { // Memulai iterasi untuk setiap elemen dalam array
+            int min_idx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (playlist[j] != null && (playlist[min_idx] == null || playlist[j].getDurasi() < playlist[min_idx].getDurasi())) { // Membandingkan durasi lagu saat ini dengan durasi lagu yang memiliki indeks minimum
+                    min_idx = j;
+                }
+            }
+            if (min_idx != i && playlist[i] != null && playlist[min_idx] != null) { // Menukar posisi lagu jika ditemukan lagu dengan durasi lebih kecil
+                Lagu temp = playlist[i];
+                playlist[i] = playlist[min_idx];
+                playlist[min_idx] = temp;
+            }
+        }
+        System.out.println("Lagu berhasil diurutkan berdasarkan durasi (Selection Sort).");
+        tampilkanSemuaLagu();
+    }
 
 }
