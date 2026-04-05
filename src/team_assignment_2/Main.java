@@ -73,7 +73,7 @@ public class Main {
                     System.out.println("Terima kasih telah menggunakan aplikasi playlist musik!");
                     break;
                 default:
-                    System.out.println("Pilihan tidak valid! Silakan pilih antara 1-6.");
+                    System.out.println("Pilihan tidak valid! Silakan pilih antara 1-7.");
             }
         }
         scanner.close();
