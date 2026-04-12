@@ -52,7 +52,7 @@ public class Comparison {
         return data;
     }
 
-    // Benchmark Traversal
+    // Benchmark Traversal (menjalankan method showData() untuk Array dan ArrayList)
     static void traversal(int[] arrayData, ArrayList<Integer> arrayListData) {
         System.out.println("1. Traversal:");
 
@@ -72,7 +72,7 @@ public class Comparison {
         System.out.println();
     }
 
-    // Benchmark Linear Search
+    // Benchmark Linear Search (menjalankan method linearSearch() untuk Array dan ArrayList)
     static void linearSearch(int[] arrayData, ArrayList<Integer> arrayListData) {
         System.out.println("2. Linear Search :");
         
@@ -90,7 +90,7 @@ public class Comparison {
         System.out.println();
     }
 
-    // Benchmark Binary Search
+    // Benchmark Binary Search (menjalankan method binarySearch() untuk Array dan ArrayList)
     static void binarySearch(int[] arrayData, ArrayList<Integer> arrayListData) {
         System.out.println("3. Binary Search :");
 
@@ -108,7 +108,7 @@ public class Comparison {
         System.out.println();
     }
 
-    // Benchmark Insertion
+    // Benchmark Insertion (menjalankan method insertAtIndex() untuk Array dan ArrayList)
     static void insertion(int[] arrayData, ArrayList<Integer> arrayListData) {
         System.out.println("4. Insertion :");
         
@@ -129,7 +129,7 @@ public class Comparison {
         System.out.println();
     }
 
-    // Benchmark Deletion
+    // Benchmark Deletion (menjalankan method delete() untuk Array dan ArrayList)
     static void deletion(int[] arrayData, ArrayList<Integer> arrayListData) {
         System.out.println("5. Deletion :");
         
@@ -150,7 +150,7 @@ public class Comparison {
         System.out.println();
     }
 
-    // Benchmark Sorting
+    // Benchmark Sorting (menjalankan method sortAscending() untuk Array dan ArrayList)
     static void sorting(int[] arrayData, ArrayList<Integer> arrayListData) {
         System.out.println("6. Sorting :");
 
