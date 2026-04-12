@@ -46,7 +46,7 @@ public class ArrayListOperations {
             int mid = left + (right - left) / 2;
 
             if (data.get(mid) == searchValue) {
-                System.out.println("Pencarian " + searchValue + " dalam Array : Ditemukan di indeks " + mid);
+                System.out.println("Pencarian " + searchValue + " dalam ArrayList : Ditemukan di indeks " + mid);
                 return;
             } else if (data.get(mid) < searchValue) {
                 left = mid + 1;
@@ -55,7 +55,7 @@ public class ArrayListOperations {
             }
         }
 
-        System.out.println("Pencarian " + searchValue + " dalam Array : Tidak ditemukan");
+        System.out.println("Pencarian " + searchValue + " dalam ArrayList : Tidak ditemukan");
     }
 
     // Menambahkan elemen pada indeks tertentu

@@ -97,7 +97,7 @@ public class ArrayOperations {
         data = newData;
     }
 
-    // Sorting
+    // Sorting (Bubble Sort)
     public void sortAscending() {
         for (int i = 0; i < data.length - 1; i++) {
             for (int j = 0; j < data.length - i - 1; j++) {
@@ -110,6 +110,7 @@ public class ArrayOperations {
         }
     }
 
+    // Mengembalikan panjang array
     public int getLength() {
         return data.length;
     }
