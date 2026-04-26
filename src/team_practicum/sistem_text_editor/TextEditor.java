@@ -15,6 +15,8 @@ class TextEditor {
 
     // tambahkan teks baru
     public void tambahTeks(String teksBaru) {
+        long startTime = System.nanoTime();
+        
         if (teksBaru == null || teksBaru.isEmpty()) {
             System.out.println("\nError: Teks tidak boleh kosong!");
             return;
@@ -27,11 +29,18 @@ class TextEditor {
         redoStack.clear();
 
         text.append(teksBaru);
+        
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+        
         System.out.println("Teks setelah tambah: \"" + text + "\"");
+        System.out.println("Waktu: " + (executionTime / 1_000_000.0) + " ms");
     }
 
     // Undo
     public void undo() {
+        long startTime = System.nanoTime();
+        
         if (undoStack.isEmpty()) {
             System.out.println("Tidak ada operasi yang bisa di-undo.");
             return;
@@ -41,11 +50,18 @@ class TextEditor {
 
         String previous = undoStack.pop();
         text = new StringBuilder(previous);
+        
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+        
         System.out.println("UNDO → Teks kembali ke: \"" + text + "\"");
+        System.out.println("Waktu: " + (executionTime / 1_000_000.0) + " ms");
     }
 
     // Redo
     public void redo() {
+        long startTime = System.nanoTime();
+        
         if (redoStack.isEmpty()) {
             System.out.println("Tidak ada perubahan yang bisa di-redo.");
             return;
@@ -55,7 +71,12 @@ class TextEditor {
 
         String next = redoStack.pop();
         text = new StringBuilder(next);
+        
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+        
         System.out.println("REDO → Teks: \"" + text + "\"");
+        System.out.println("Waktu: " + (executionTime / 1_000_000.0) + " ms");
     }
 
     public String getText() {

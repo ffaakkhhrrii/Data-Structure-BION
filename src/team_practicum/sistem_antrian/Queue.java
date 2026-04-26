@@ -19,6 +19,8 @@ class Queue {
 
     //TAMBAH PELANGGAN BARU
     public void enqueue(String nama) {
+        long startTime = System.nanoTime();
+        
         String nomorAntrian = generateNomorAntrian();
         Node newNode = new Node(nama, nomorAntrian);
 
@@ -33,13 +35,20 @@ class Queue {
         }
 
         jumlahPelanggan++;
+        
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+        
         System.out.println("\n" + nama + " telah ditambahkan ke antrean!");
         System.out.println("   Nomor Antrian: " + nomorAntrian);
+        System.out.println("   Waktu Eksekusi Sistem: " + (executionTime / 1_000_000.0) + " ms");
     }
 
 
     //LAYANI PELANGGAN
     public void dequeue() {
+        long startTime = System.nanoTime();
+        
         if (isEmpty()) {
             System.out.println("\nAntrean kosong! Tidak ada pelanggan yang bisa dilayani.");
             return;
@@ -57,9 +66,13 @@ class Queue {
 
         jumlahPelanggan--;
 
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+
         System.out.println("\nMelayani pelanggan: " + dilayani.namaPelanggan);
         System.out.println("   Nomor Antrian: " + dilayani.nomorAntrian);
         System.out.println("   Selamat datang! Silakan menuju ke loket.");
+        System.out.println("   Waktu Eksekusi Sistem: " + (executionTime / 1_000_000.0) + " ms");
     }
 
 
@@ -99,14 +112,20 @@ class Queue {
 
     //LIHAT PELANGGAN PALING DEPAN
     public void peek() {
+        long startTime = System.nanoTime();
+        
         if (isEmpty()) {
             System.out.println("\nAntrean kosong!");
             return;
         }
 
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+
         System.out.println("\nPelanggan yang akan dilayani berikutnya:");
         System.out.println("   Nama: " + front.namaPelanggan);
         System.out.println("   Nomor Antrian: " + front.nomorAntrian);
+        System.out.println("   Waktu Eksekusi Sistem: " + (executionTime / 1_000_000.0) + " ms");
     }
 
 

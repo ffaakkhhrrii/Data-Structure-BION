@@ -12,6 +12,8 @@ public class MahasiswaLinkedList {
 
     // Tambah mahasiswa baru ke dalam linked list
     public void tambahMahasiswa(String nim, String nama, double nilai) {
+        long startTime = System.nanoTime();
+        
         // Validasi input
         if (nim == null || nim.trim().isEmpty() || 
             nama == null || nama.trim().isEmpty()) {
@@ -44,11 +46,18 @@ public class MahasiswaLinkedList {
         }
         
         jumlah++;
+        
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+        
         System.out.println("\nMahasiswa " + nama + " berhasil ditambahkan!");
+        System.out.println("  Waktu: " + (executionTime / 1_000_000.0) + " ms");
     }
     
     // Hapus mahasiswa berdasarkan NIM
     public void hapusMahasiswa(String nim) {
+        long startTime = System.nanoTime();
+        
         if (head == null) {
             System.out.println("\nError: Daftar mahasiswa kosong!");
             return;
@@ -58,7 +67,12 @@ public class MahasiswaLinkedList {
             String nama = head.getData().getNama();
             head = head.getNext();
             jumlah--;
+            
+            long endTime = System.nanoTime();
+            long executionTime = endTime - startTime;
+            
             System.out.println("\nMahasiswa " + nama + " berhasil dihapus!");
+            System.out.println("  Waktu: " + (executionTime / 1_000_000.0) + " ms");
             return;
         }
         
@@ -68,17 +82,28 @@ public class MahasiswaLinkedList {
                 String nama = current.getNext().getData().getNama();
                 current.setNext(current.getNext().getNext());
                 jumlah--;
+                
+                long endTime = System.nanoTime();
+                long executionTime = endTime - startTime;
+                
                 System.out.println("\nMahasiswa " + nama + " berhasil dihapus!");
+                System.out.println("  Waktu: " + (executionTime / 1_000_000.0) + " ms");
                 return;
             }
             current = current.getNext();
         }
         
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+        
         System.out.println("\nError: Mahasiswa dengan NIM " + nim + " tidak ditemukan!");
+        System.out.println("  Waktu: " + (executionTime / 1_000_000.0) + " ms");
     }
     
     // Update nilai mahasiswa berdasarkan NIM
     public void updateNilai(String nim, double nilaiNilai) {
+        long startTime = System.nanoTime();
+        
         if (nilaiNilai < 0 || nilaiNilai > 100) {
             System.out.println("\nError: Nilai harus antara 0-100!");
             return;
@@ -89,14 +114,23 @@ public class MahasiswaLinkedList {
             if (current.getData().getNim().equals(nim)) {
                 double nilaiLama = current.getData().getNilai();
                 current.getData().setNilai(nilaiNilai);
+                
+                long endTime = System.nanoTime();
+                long executionTime = endTime - startTime;
+                
                 System.out.println("\nNilai mahasiswa " + current.getData().getNama() +
                                  " diperbarui dari " + nilaiLama + " menjadi " + nilaiNilai);
+                System.out.println("  Waktu: " + (executionTime / 1_000_000.0) + " ms");
                 return;
             }
             current = current.getNext();
         }
         
+        long endTime = System.nanoTime();
+        long executionTime = endTime - startTime;
+        
         System.out.println("\nError: Mahasiswa dengan NIM " + nim + " tidak ditemukan!");
+        System.out.println("  Waktu: " + (executionTime / 1_000_000.0) + " ms");
     }
     
     // Tampilkan daftar mahasiswa
