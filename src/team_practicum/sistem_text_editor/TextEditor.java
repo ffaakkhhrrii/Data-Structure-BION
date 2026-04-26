@@ -1,20 +1,30 @@
 package team_practicum.sistem_text_editor;
 
+import java.util.Stack;
+
 class TextEditor {
     private StringBuilder text;
-    private TextStack undoStack;   // menyimpan snapshot sebelum perubahan
-    private TextStack redoStack;   // menyimpan perubahan yang di-undo
+    private Stack<String> undoStack;   // Menyimpan snapshot sebelum perubahan
+    private Stack<String> redoStack;   // Menyimpan perubahan yang di-undo
 
     public TextEditor() {
         this.text = new StringBuilder();
-        this.undoStack = new TextStack();
-        this.redoStack = new TextStack();
+        this.undoStack = new Stack<>();
+        this.redoStack = new Stack<>();
     }
 
     // tambahkan teks baru
     public void tambahTeks(String teksBaru) {
+        if (teksBaru == null || teksBaru.isEmpty()) {
+            System.out.println("\nError: Teks tidak boleh kosong!");
+            return;
+        }
+        
+        // Simpan state sebelumnya untuk undo
         undoStack.push(text.toString());
-        redoStack = new TextStack();
+        
+        // Clear redo stack karena ada operasi baru
+        redoStack.clear();
 
         text.append(teksBaru);
         System.out.println("Teks setelah tambah: \"" + text + "\"");
