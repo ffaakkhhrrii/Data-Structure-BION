@@ -62,6 +62,7 @@ public class CustomerQueue {
             return "Antrian kosong.";
         }
 
+        // Disini saya menggunakan StringBuilder karena lebih efisien untuk menggabungkan string dalam loop
         StringBuilder result = new StringBuilder();
         result.append("Daftar Antrian Pelanggan:\n");
 
