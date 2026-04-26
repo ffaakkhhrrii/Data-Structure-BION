@@ -9,7 +9,7 @@ public class TransactionStack {
         this.size = 0;
     }
 
-    /// Menambahkan transaksi ke puncak stack (Push)
+    // Menambahkan transaksi ke puncak stack (Push)
     public boolean push(Transaction transaction) {
         if (transaction == null) {
             return false;
@@ -22,7 +22,7 @@ public class TransactionStack {
         return true;
     }
 
-    /// Mengambil transaksi dari puncak stack (Pop)
+    // Mengambil transaksi dari puncak stack (Pop)
     public Transaction pop() {
         if (top == null) {
             return null;
@@ -34,7 +34,7 @@ public class TransactionStack {
         return transaction;
     }
 
-    /// Melihat transaksi di puncak stack tanpa menghapusnya (Peek)
+    // Melihat transaksi di puncak stack tanpa menghapusnya (Peek)
     public Transaction peek() {
         if (top == null) {
             return null;

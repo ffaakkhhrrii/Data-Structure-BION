@@ -19,9 +19,11 @@ public class BookLinkedList {
         Book newBook = new Book(kodeBuku, judul, penulis);
         Node newNode = new Node(newBook);
 
+        // Menambahkan buku baru ke akhir daftar
         if (head == null) {
             head = newNode;
         } else {
+            // Mencari node terakhir dan menambahkan buku baru di sana
             Node current = head;
             while (current.getNext() != null) {
                 current = current.getNext();
@@ -38,9 +40,11 @@ public class BookLinkedList {
             return false;
         }
 
+        // Jika hanya ada satu buku dalam daftar
         if (head.getNext() == null) {
             head = null;
         } else {
+            // Menghapus buku terakhir dengan mencari node sebelum node terakhir
             Node current = head;
             while (current.getNext().getNext() != null) {
                 current = current.getNext();

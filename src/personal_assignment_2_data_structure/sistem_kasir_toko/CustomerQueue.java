@@ -12,7 +12,7 @@ public class CustomerQueue {
     }
 
 
-    /// Menambahkan pelanggan ke belakang antrian (Enqueue)
+    // Menambahkan pelanggan ke belakang antrian (Enqueue)
     public boolean enqueue(String nomorAntrian, String namaPelanggan, double totalBelanja) {
         if (nomorAntrian.isEmpty() || namaPelanggan.isEmpty() || totalBelanja <= 0) {
             return false;
