@@ -38,6 +38,11 @@ public class CustomerQueue {
             return null;
         }
 
+        // Validasi: minimal 5 pelanggan harus dalam antrian sebelum dequeue
+        if (size < 5) {
+            return null;
+        }
+
         Customer customer = front.getData();
         front = front.getNext();
 

@@ -63,7 +63,12 @@ public class CashierSystem {
         Customer customer = customerQueue.dequeue();
 
         if (customer == null) {
-            System.out.println("\nTidak ada pelanggan dalam antrian untuk dilayani.");
+            if (customerQueue.isEmpty()) {
+                System.out.println("\nTidak ada pelanggan dalam antrian untuk dilayani.");
+            } else {
+                System.out.println("\nMinimal 5 pelanggan dalam antrian untuk melayani!");
+                System.out.println("Jumlah pelanggan saat ini: " + customerQueue.getSize());
+            }
             return;
         }
 

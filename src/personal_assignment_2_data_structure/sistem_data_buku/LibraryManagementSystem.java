@@ -60,6 +60,12 @@ public class LibraryManagementSystem {
 
     // Menjalankan fitur hapus buku terakhir
     private void deleteBook() {
+        if (bookList.getSize() < 5) {
+            System.out.println("\nJumlah buku harus minimal 5 untuk menghapus data!");
+            System.out.println("Jumlah buku saat ini: " + bookList.getSize());
+            return;
+        }
+
         if (bookList.deleteLastBook()) {
             System.out.println("\nData buku terakhir berhasil dihapus!");
         } else {
@@ -70,6 +76,12 @@ public class LibraryManagementSystem {
 
     // Menjalankan fitur cari buku berdasarkan kode buku
     private void searchBook() {
+        if (bookList.getSize() < 5) {
+            System.out.println("\nJumlah buku harus minimal 5 untuk melakukan pencarian!");
+            System.out.println("Jumlah buku saat ini: " + bookList.getSize());
+            return;
+        }
+
         System.out.print("\nMasukkan Kode Buku: ");
         String kodeBuku = scanner.nextLine().trim();
 
@@ -90,6 +102,12 @@ public class LibraryManagementSystem {
 
     // Menjalankan fitur tampilkan semua buku
     private void displayAllBooks() {
+        if (bookList.getSize() < 5) {
+            System.out.println("\nJumlah buku harus minimal 5 untuk menampilkan data!");
+            System.out.println("Jumlah buku saat ini: " + bookList.getSize());
+            return;
+        }
+
         System.out.println();
         System.out.println(bookList.displayAllBooks());
     }
