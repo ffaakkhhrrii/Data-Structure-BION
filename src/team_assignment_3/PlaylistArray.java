@@ -145,9 +145,12 @@ public class PlaylistArray {
     
     // Menampilkan lagu terpanjang
     public static String cariJudulTerpanjang(Lagu[] list, int index, int maxIndex) {
+        // Base case jika index sudah mencapai 0, kembalikan judul lagu dengan durasi terpanjang
         if (index == 0) {
             return list[maxIndex].getJudul();
         }
+
+        // Update maxIndex jika durasi lagu saat ini lebih panjang dari durasi lagu di maxIndex
         if (list[index].getDurasi() > list[maxIndex].getDurasi()) {
             maxIndex = index;
         }
@@ -158,12 +161,17 @@ public class PlaylistArray {
     
     // Mencari artis dari lagu dengan durasi terpanjang
     public static String cariArtisTerpanjang(Lagu[] list, int index, int maxIndex) {
+        // Base case jika index sudah mencapai 0, kembalikan artis lagu dengan durasi terpanjang
         if (index == 0) {
             return list[maxIndex].getArtis();
         }
+
+        // Update maxIndex jika durasi lagu saat ini lebih panjang dari durasi lagu di maxIndex
         if (list[index].getDurasi() > list[maxIndex].getDurasi()) {
             maxIndex = index;
         }
+
+        // Recursive case panggil untuk index sebelumnya
         return cariArtisTerpanjang(list, index - 1, maxIndex);
     }
     
